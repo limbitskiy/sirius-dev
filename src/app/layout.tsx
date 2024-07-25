@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Play } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 const play = Play({ weight: ["400", "700"], subsets: ["cyrillic"] });

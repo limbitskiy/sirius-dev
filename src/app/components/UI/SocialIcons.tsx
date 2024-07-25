@@ -1,6 +1,6 @@
 export default function SocialIcons() {
   return (
-    <div className="social-icons gap-4 hidden xsm:flex">
+    <div className="social-icons gap-4 flex">
       <div className="telegram group cursor-pointer">
         <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

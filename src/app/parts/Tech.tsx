@@ -306,8 +306,8 @@ export const Tech = memo(() => {
                 </clipPath>
               </defs>
             </svg>
-            <span className="text-3xl">Гибкая структура</span>
-            <span className="text-center">Управление структурой данных из личного кабинета. Легко создавать и настраивать дополнительные атрибуты</span>
+            <span className="text-2xl text-center">Гибкая структура</span>
+            <span className="text-center text-lg text-gray-500">Управление структурой данных из личного кабинета. Легко создавать и настраивать дополнительные атрибуты</span>
           </li>
           <li className="flex flex-col items-center">
             <svg width="247" height="247" viewBox="0 0 247 247" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -755,8 +755,8 @@ export const Tech = memo(() => {
                 </clipPath>
               </defs>
             </svg>
-            <span className="text-3xl">Высокая производительность</span>
-            <span className="text-center">Полный цикл обработки запросов внутри базы данных. Используется современный стандарт SQL-2023</span>
+            <span className="text-2xl text-center">Высокая производительность</span>
+            <span className="text-center text-lg text-gray-500">Полный цикл обработки запросов внутри базы данных. Используется современный стандарт SQL-2023</span>
           </li>
           <li className="flex flex-col items-center">
             <svg width="247" height="247" viewBox="0 0 247 247" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1027,8 +1027,8 @@ export const Tech = memo(() => {
               </defs>
             </svg>
 
-            <span className="text-3xl">Компактный код</span>
-            <span className="text-center">
+            <span className="text-2xl text-center">Компактный код</span>
+            <span className="text-center text-lg text-gray-500">
               "BackEnd-driven" подход для полного управления веб-сайтом с сервера. Используется только javascript и pgSQL, что сокращает код в 10+ раз
             </span>
           </li>
@@ -1244,8 +1244,8 @@ export const Tech = memo(() => {
               </defs>
             </svg>
 
-            <span className="text-3xl">Короткие сроки</span>
-            <span className="text-center">
+            <span className="text-2xl text-center">Короткие сроки</span>
+            <span className="text-center text-lg text-gray-500">
               Убираем бизнес-логику с фронтенда с помощью собственной библиотеки UniRender. Собственный набор библиотек для работы с данными UniBackend.
             </span>
           </li>

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { ReactEventHandler, useState } from "react";
 
 export function Backdrop() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     // console.log(e.nativeEvent.offsetX);
     // console.log(e.nativeEvent.offsetY);
     setPos({

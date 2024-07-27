@@ -6,7 +6,7 @@ import Logo from "../components/UI/Logo";
 import { Button } from "../components/UI/Button";
 
 export default function Footer() {
-  const handleBtn = (e) => {
+  const handleBtn = (e: string) => {
     console.log(`click`);
   };
 

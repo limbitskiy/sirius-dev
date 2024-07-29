@@ -1,0 +1,27 @@
+export default defineEventHandler(async (event) => {
+  return [
+    "Europe/Kaliningrad",
+    "Europe/Moscow",
+    "Europe/Simferopol",
+    "Europe/Volgograd",
+    "Europe/Samara",
+    "Asia/Yekaterinburg",
+    "Asia/Omsk",
+    "Asia/Novosibirsk",
+    "Asia/Barnaul",
+    "Asia/Tomsk",
+    "Asia/Novokuznetsk",
+    "Asia/Krasnoyarsk",
+    "Asia/Irkutsk",
+    "Asia/Chita",
+    "Asia/Yakutsk",
+    "Asia/Khandyga",
+    "Asia/Vladivostok",
+    "Asia/Ust-Nera",
+    "Asia/Magadan",
+    "Asia/Sakhalin",
+    "Asia/Srednekolymsk",
+    "Asia/Kamchatka",
+    "Asia/Anadyr",
+  ];
+});

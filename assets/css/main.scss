@@ -1,0 +1,90 @@
+:root {
+  --bg-grey: #f7f7f7;
+  --black-color: #2f4858;
+  --accent-color: #ea445a;
+}
+
+body {
+  color: var(--black-color);
+  background-color: var(--bg-grey);
+  font-family: Play, sans-serif;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 100%;
+
+  &.center {
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 600;
+}
+
+h3 {
+  font-family: Inter, sans-serif;
+  font-size: clamp(18px, 5vw, 21px);
+  line-height: 1.25;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.font-inter {
+  font-family: Inter, sans-serif;
+}
+
+.accent-btn {
+  background: linear-gradient(180deg, #ea445a 0%, #c62e42 100%);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.4);
+}
+
+.accent-btn:hover {
+  background: linear-gradient(180deg, #fd2b47 0%, #b81a2f 100%);
+}
+
+.black-btn {
+  background: #2f4858;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.black-btn:hover {
+  background: #20333f;
+}
+
+.bg-squares {
+  background-image: url("/squares-bg-minified.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-bg {
+  background-image: url("/form-bg-tinified.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grey-gradient {
+  background: linear-gradient(94.09deg, #555555 7.45%, #3d3d3d 93.06%);
+}
+
+.project-title {
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 600;
+}
+
+.project-desc {
+  font-size: clamp(18px, 5vw, 24px);
+}

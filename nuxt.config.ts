@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/google-fonts", "@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt", "@nuxt/icon"],
+  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/ui", "@nuxtjs/tailwindcss"],
   css: ["~/assets/css/main.scss"],
   googleFonts: {
     families: {
@@ -14,5 +14,8 @@ export default defineNuxtConfig({
     head: {
       style: ["html { scroll-behavior: smooth }"],
     },
+  },
+  colorMode: {
+    preference: "light",
   },
 });

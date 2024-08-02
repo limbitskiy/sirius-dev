@@ -1,62 +1,89 @@
 <template>
-  <section class="form mb-12">
-    <div v-if="locale === 'ru'" class="form-bg text-white">
-      <div class="container py-16">
-        <h2 class="section-title text-center">Есть вопросы?</h2>
-        <h3 class="section-title text-center">Свяжитесь с нами</h3>
-        <form class="w-full flex flex-col" @submit="handleSubmit">
-          <div class="form-content flex flex-wrap my-6 gap-4 justify-center">
-            <div class="form-start w-4/5 sm:w-2/5 flex flex-col gap-4 min-w-60 h-32 justify-between">
-              <UIInput v-model="name" placeholder="ИМЯ" />
-              <UIInput v-model="email" placeholder="EMAIL" />
+  <section class="form">
+    <div v-if="locale === 'ru'" class="bg-gray-200 relative">
+      <div class="bg-squares absolute inset-0 z-0"></div>
+      <div class="container py-16 relative z-10 w-full lg:w-[50%]">
+        <h2 class="section-title text-center">Обратная связь</h2>
+        <UIPill>
+          <UForm :schema="schema" :state="state" class="flex flex-col justify-center gap-8" @submit="onSubmit">
+            <div class="form-body space-y-4">
+              <UFormGroup label="Название компании" name="name">
+                <UInput v-model="state.name" color="gray" size="xl" />
+              </UFormGroup>
+
+              <UFormGroup label="Почта" name="email">
+                <UInput v-model="state.email" color="gray" type="email" size="xl" />
+              </UFormGroup>
+
+              <UFormGroup label="Комментарий" name="comment">
+                <UTextarea v-model="state.comment" color="gray" variant="outline" size="xl" />
+              </UFormGroup>
             </div>
-            <div class="form-end w-4/5 sm:w-2/5 min-w-60">
-              <UITextarea v-model="comment" placeholder="КОММЕНТАРИЙ" />
-            </div>
-          </div>
-          <input
-            type="submit"
-            value="отправить"
-            class="cursor-pointer rounded-xl py-4 px-16 text-lg font-bold uppercase text-white transition-all w-4/5 sm:w-64 m-auto black-btn"
-          />
-        </form>
+
+            <input
+              type="submit"
+              value="отправить"
+              class="cursor-pointer rounded-xl py-2 px-4 text-lg font-bold uppercase text-white transition-all w-full lg:w-48 m-auto black-btn"
+            />
+          </UForm>
+        </UIPill>
       </div>
     </div>
-    <div v-else class="form-bg text-white">
-      <div class="container py-16">
+    <div v-else class="bg-gray-200 relative">
+      <div class="bg-squares absolute inset-0 z-0"></div>
+      <div class="container py-16 relative z-10 w-full lg:w-[50%]">
         <h2 class="section-title text-center">Send request</h2>
         <!-- <h3 class="section-title text-center">Свяжитесь с нами</h3> -->
-        <form class="w-full flex flex-col" @submit="handleSubmit">
-          <div class="form-content flex flex-wrap my-6 gap-4 justify-center">
-            <div class="form-start w-4/5 sm:w-2/5 flex flex-col gap-4 min-w-60 h-32 justify-between">
-              <UIInput v-model="name" placeholder="NAME" />
-              <UIInput v-model="email" placeholder="EMAIL" />
+        <UIPill>
+          <UForm :schema="schema" :state="state" class="flex flex-col justify-center gap-8" @submit="onSubmit">
+            <div class="form-body space-y-4">
+              <UFormGroup label="Company name" name="name">
+                <UInput v-model="state.name" color="gray" size="xl" />
+              </UFormGroup>
+
+              <UFormGroup label="Email" name="email">
+                <UInput v-model="state.email" color="gray" type="email" size="xl" />
+              </UFormGroup>
+
+              <UFormGroup label="Comment" name="comment">
+                <UTextarea v-model="state.comment" color="gray" variant="outline" size="xl" placeholder="Comment" />
+              </UFormGroup>
             </div>
-            <div class="form-end w-4/5 sm:w-2/5 min-w-60">
-              <UITextarea v-model="comment" placeholder="PROJECT DETAILS" />
-            </div>
-          </div>
-          <input type="submit" value="send" class="cursor-pointer rounded-xl py-4 px-16 text-lg font-bold uppercase text-white transition-all w-4/5 sm:w-64 m-auto black-btn" />
-        </form>
+
+            <input type="submit" value="send" class="cursor-pointer rounded-xl py-2 px-4 text-lg font-bold uppercase text-white transition-all w-full lg:w-48 m-auto black-btn" />
+          </UForm>
+        </UIPill>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { object, string } from "yup";
 import { useUserStore } from "~/store/user";
 
 const userStore = useUserStore();
 const { locale } = userStore;
+const { setNotificationOpen } = userStore;
 
-const name = ref("");
-const email = ref("");
-const comment = ref("");
+const schema = object({
+  name: string().required("Required"),
+  email: string().email("Invalid email").required("Required"),
+  comment: string(),
+});
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  console.log(name.value);
-  console.log(email.value);
-  console.log(comment.value);
+const state = ref({
+  name: "",
+  email: "",
+  comment: "",
+});
+
+const onSubmit = async () => {
+  state.value = {
+    name: "",
+    email: "",
+    comment: "",
+  };
+  setNotificationOpen(true);
 };
 </script>

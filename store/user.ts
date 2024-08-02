@@ -3,58 +3,37 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", () => {
   const user = ref({
     locale: "ru",
-    loading: ref(false),
-    menuItems: {
-      ru: [
-        {
-          id: 0,
-          text: "Главная",
-        },
-        {
-          id: 1,
-          text: "Наши технологии",
-        },
-        {
-          id: 2,
-          text: "Проекты",
-        },
-        {
-          id: 3,
-          text: "Контакты",
-        },
-      ],
-      en: [
-        {
-          id: 0,
-          text: "IT development",
-        },
-        {
-          id: 1,
-          text: "Special offer",
-        },
-        {
-          id: 2,
-          text: "Featured projects",
-        },
-        {
-          id: 3,
-          text: "Blog",
-        },
-        {
-          id: 4,
-          text: "Contacts",
-        },
-      ],
-    },
+    loading: true,
+    modalOpen: false,
+    notificationOpen: false,
+    menuOpen: false,
   });
 
   const locale = computed(() => user.value.locale);
   const loading = computed(() => user.value.loading);
-  const menuItems = computed(() => user.value.menuItems[user.value.locale]);
+  const modalOpen = computed(() => user.value.modalOpen);
+  const notificationOpen = computed(() => user.value.notificationOpen);
+  const menuOpen = computed(() => user.value.menuOpen);
 
   const setLocale = (locale) => {
     user.value.locale = locale;
   };
 
-  return { locale, loading, menuItems, setLocale };
+  const setLoading = (value) => {
+    user.value.loading = value;
+  };
+
+  const setModalOpen = (value) => {
+    user.value.modalOpen = value;
+  };
+
+  const setNotificationOpen = (value) => {
+    user.value.notificationOpen = value;
+  };
+
+  const setMenuOpen = (value) => {
+    user.value.menuOpen = value;
+  };
+
+  return { locale, loading, modalOpen, notificationOpen, menuOpen, setLocale, setLoading, setModalOpen, setNotificationOpen, setMenuOpen };
 });

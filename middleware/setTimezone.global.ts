@@ -2,9 +2,12 @@ import { useUserStore } from "~/store/user";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   const cookieTimezone = useCookie("timezone").value;
+  const nuxtApp = useNuxtApp();
+
+  if (!cookieTimezone) return;
 
   const userStore = useUserStore();
-  const { setLocale } = userStore;
+  const { setLocale, setLoading } = userStore;
 
   const { data: timezones } = await useFetch("/api/timezones");
 
@@ -13,4 +16,9 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   } else {
     setLocale("en");
   }
+
+  nuxtApp.hook("page:finish", () => {
+    setLoading(false);
+    document.body.style.overflow = "auto";
+  });
 });

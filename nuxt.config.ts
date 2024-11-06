@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       style: ["html { scroll-behavior: smooth }"],
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     },
   },
   colorMode: {

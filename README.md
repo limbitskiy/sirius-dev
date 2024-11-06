@@ -1,1 +1,1 @@
-### A landing page fro Siriue Dev
+### A landing page for Sirius Dev

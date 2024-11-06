@@ -1,6 +1,8 @@
 <template>
   <section class="hero grid items-center bg-image relative flex-1 min-h-[70dvh]">
     <!-- <Backdrop /> -->
+    <div class="backdrop absolute inset-0" style="background: no-repeat center url('/bg-pattern.png')"></div>
+
     <div v-if="locale === 'ru'" class="container flex flex-col items-center relative">
       <h1 class="center">
         Мы создаем <span class="text-[--accent-color]">B2B&nbsp;системы</span>

@@ -21,7 +21,7 @@
               <br />
               127015
             </p>
-            <a class="text-white underline" href="#"> на карте </a>
+            <!-- <a class="text-white underline" href="#"> на карте </a> -->
           </div>
           <div class="footer-col mb-8 lg:mb-0">
             <span class="text-2xl text-white">Европейский офис</span>
@@ -31,7 +31,7 @@
               Novi Sad, Republic of Serbia, <br />
               21102
             </p>
-            <a class="text-white underline" href="#"> на карте </a>
+            <!-- <a class="text-white underline" href="#"> на карте </a> -->
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
             Novi Sad, Republic of Serbia, <br />
             21102
           </p>
-          <a class="text-white underline" href="#"> show on map </a>
+          <!-- <a class="text-white underline" href="#"> show on map </a> -->
         </div>
       </div>
       <div class="footer-bottom flex flex-col md:flex-row items-center justify-between border-t border-gray-400 py-4">

@@ -1,6 +1,6 @@
 <template>
   <Hero />
-  <BigVideo />
+  <!-- <BigVideo /> -->
   <Tech />
   <Architecture />
   <Form />

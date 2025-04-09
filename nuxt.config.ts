@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/ui", "@nuxtjs/tailwindcss"],
   css: ["~/assets/css/main.scss"],
   googleFonts: {
@@ -16,6 +16,12 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     },
   },
+  // tailwindcss: {
+  //   config: {
+  //     darkMode: "false",
+  //   },
+  //   exposeConfig: true,
+  // },
   colorMode: {
     preference: "light",
   },

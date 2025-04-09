@@ -15,23 +15,23 @@ export const useUserStore = defineStore("user", () => {
   const notificationOpen = computed(() => user.value.notificationOpen);
   const menuOpen = computed(() => user.value.menuOpen);
 
-  const setLocale = (locale) => {
+  const setLocale = (locale: string) => {
     user.value.locale = locale;
   };
 
-  const setLoading = (value) => {
+  const setLoading = (value: boolean) => {
     user.value.loading = value;
   };
 
-  const setModalOpen = (value) => {
+  const setModalOpen = (value: boolean) => {
     user.value.modalOpen = value;
   };
 
-  const setNotificationOpen = (value) => {
+  const setNotificationOpen = (value: boolean) => {
     user.value.notificationOpen = value;
   };
 
-  const setMenuOpen = (value) => {
+  const setMenuOpen = (value: boolean) => {
     user.value.menuOpen = value;
   };
 

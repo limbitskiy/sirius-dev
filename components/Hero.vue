@@ -1,9 +1,14 @@
 <template>
-  <section class="hero grid items-center bg-image relative flex-1 min-h-[70dvh]">
+  <div class="hero grid items-center relative min-h-[100dvh]">
     <!-- <Backdrop /> -->
-    <div class="backdrop absolute inset-0" style="background: no-repeat center url('/bg-pattern.png')"></div>
+    <div class="backdrop absolute inset-0" :class="$style['blurred']">
+      <video width="100%" height="auto" preload="none" autoPlay loop muted class="m-auto" style="object-fit: cover; height: 100vh">
+        <source src="/m3-promo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-    <div v-if="locale === 'ru'" class="container flex flex-col items-center relative">
+    <div v-if="locale === 'ru'" class="container flex flex-col items-center relative" :class="$style['text-bg']">
       <h1 class="center">
         Мы создаем <span class="text-[--accent-color]">B2B&nbsp;системы</span>
         <br />
@@ -462,7 +467,7 @@
         </svg>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -472,3 +477,15 @@ const userStore = useUserStore();
 const { locale } = storeToRefs(userStore);
 const { setModalOpen } = userStore;
 </script>
+
+<style lang="scss" module>
+.blurred {
+  filter: blur(2px) brightness(0.8);
+}
+
+.text-bg {
+  background-color: white;
+  padding: 5rem 3rem;
+  width: 80vw;
+}
+</style>

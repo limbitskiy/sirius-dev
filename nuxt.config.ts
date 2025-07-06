@@ -1,28 +1,43 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2025-05-15",
   devtools: { enabled: false },
-  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/ui", "@nuxtjs/tailwindcss"],
-  css: ["~/assets/css/main.scss"],
-  googleFonts: {
-    families: {
-      Inter: [400, 700],
-      Play: [400, 700],
-    },
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/tailwindcss",
+    "@pinia/nuxt",
+    "@nuxtjs/i18n",
+    "@nuxtjs/google-fonts",
+  ],
+  css: ["~/assets/css/main.css"],
+  vite: {
+    plugins: [tailwindcss()],
   },
   app: {
     head: {
-      style: ["html { scroll-behavior: smooth }"],
       link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     },
   },
-  // tailwindcss: {
-  //   config: {
-  //     darkMode: "false",
-  //   },
-  //   exposeConfig: true,
-  // },
+  i18n: {
+    locales: [
+      { code: "ru", language: "ru-RU", file: "ru.json" },
+      { code: "en", language: "en-US", file: "en.json" },
+    ],
+    defaultLocale: "en",
+  },
   colorMode: {
     preference: "light",
+  },
+  googleFonts: {
+    families: {
+      Montserrat: [400, 500, 600, 700, 800, 900],
+      Inter: [400, 500, 600, 700, 800, 900],
+      Raleway: [400, 500, 600, 700, 800, 900],
+    },
   },
 });

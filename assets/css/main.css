@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --grey-bg: #f8f9fa;
+  --border-color: #eeeeee;
+  --black-color: #052f4a;
+  --accent-color: #ff2056;
+
+  --grey-text: #657288;
+
+  /* --border-color: #1d293d;
+  --light-bg: #080e23;
+  --dark-bg: #020617; */
+}
+
+body {
+  color: var(--black-color);
+  background-color: white;
+  font-family: Raleway, sans-serif;
+}
+
+.font-public {
+  font-family: Public-sans, sans-serif;
+}
+
+.font-inter {
+  font-family: Inter, sans-serif;
+}
+
+.font-montserrat {
+  font-family: Montserrat, sans-serif;
+}
+
+@theme static {
+  --color-greybg: #f8f9fa;
+  --color-accent: #ff2056;
+  --color-greytext: #657288;
+  --color-darkblue: #052f4a;
+}

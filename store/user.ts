@@ -35,5 +35,16 @@ export const useUserStore = defineStore("user", () => {
     user.value.menuOpen = value;
   };
 
-  return { locale, loading, modalOpen, notificationOpen, menuOpen, setLocale, setLoading, setModalOpen, setNotificationOpen, setMenuOpen };
+  return {
+    locale,
+    loading,
+    modalOpen,
+    notificationOpen,
+    menuOpen,
+    setLocale,
+    setLoading,
+    setModalOpen,
+    setNotificationOpen,
+    setMenuOpen,
+  };
 });
